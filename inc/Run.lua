@@ -256,7 +256,7 @@ end
 if msg.sender_user_id_ == 1074128626 then 
 msg.TheRank =  'مطور السورس'
 msg.Rank = 1
-elseif msg.sender_user_id_ == 1074128626 then 
+elseif msg.sender_user_id_ == 1153357069  then 
 msg.TheRank =  'مطور السورس'
 msg.Rank = 1
 elseif msg.sender_user_id_ == SUDO_ID then 
