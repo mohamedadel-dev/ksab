@@ -215,7 +215,6 @@ Start_Bot()
 
 
 function input_inFo(msg)
-
 if not msg.forward_info_ and msg.is_channel_post_ then
 StatusLeft(msg.chat_id_,our_id)
 return false
@@ -254,9 +253,6 @@ else
 msg.GroupActive = false
 end
 if msg.sender_user_id_ == 1074128626 then 
-msg.TheRank =  'مطور السورس'
-msg.Rank = 1
-if msg.sender_user_id_ == 1153357069 then 
 msg.TheRank =  'مطور السورس'
 msg.Rank = 1
 elseif msg.sender_user_id_ == SUDO_ID then 
