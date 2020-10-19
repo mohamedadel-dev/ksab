@@ -2312,7 +2312,7 @@ end
 if MsgText[1] == "السورس" or MsgText[1]=="سورس" then
 return [[
 
-•𝒅𝒆𝒗 >> [𝐌𝐎𝐇𝐀𝐌𝐄𝐃 𝐀𝐃𝐄𝐋 ](t.me/X_M_Dodda)
+•𝒅𝒆𝒗 >> [ 𝐀𝐃𝐄𝐋 ](t.me/X_M_Dodda)
 
 •𝒄𝒉 >> [• 𝐒𝐎𝗨𝐑𝐂𝐄 𝐊𝐀𝐒𝐀𝐁 .](t.me/K_AsA_B)
 
