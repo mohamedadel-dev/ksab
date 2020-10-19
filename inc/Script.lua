@@ -1848,7 +1848,7 @@ print(GetVerison.." > "..version)
 if GetVerison > version then
 UpdateSourceStart = true
 sendMsg(msg.chat_id_,msg.id_,' *╿* يوجد تحديث جديد الان \n*╽* جاري تنزيل وتثبيت التحديث  ...' )
-redis:set(ksab..":VERSION",GetVerison)
+redis:set(dany..":VERSION",GetVerison)
 return false
 else
 return "╿الاصدار الحالي : *v"..version.."* \n*╽* لديـك احدث اصدار \n"
@@ -1857,9 +1857,8 @@ return false
 end
 
 if MsgText[1] == 'اصدار السورس' or MsgText[1] == 'الاصدار' then
-return '• اصدار سورس كساب : *v'..version..'* \n'
+return '܁༯┆اصدار سورس كساب: *v'..version..'* \n'
 end
-
 
 
 if MsgText[1] == 'نسخه احتياطيه للمجموعات' then
