@@ -1,18 +1,8 @@
 --[[
-─▄█▀█▄──▄███▄─
-▐█░██████████▌
-─██▒█████████─
-──▀████████▀──┊@UU_IV
-
- ██  ██.                     ██
-██.       ██.         ██.      ██
-██.         ██.     ██.██ ██ ██
-██.       ██.     ██.                ██
-██  ██.         ██.                     ██         │ksab ﹏ @UU_IV
+▀█████████▄           ██       ████████
+██▀ │ksab ﹏ @UU_IV
 │تم تطوير وبرمجة السورس من قبل سونيكᐂ .
-─────▀██▀─────
-┊ksab ‿ @UU_IV
-┊@UU_IV ‿ @UU_IV
+│@UU_IV
 #-------------------------------------------------------------------
 ]]
 local function download(file_id, dl_cb, cmd)
@@ -112,7 +102,7 @@ Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close() 
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "•~اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n•~شكرا لاستخدامك سورس كساب \n•~أرســل  الان /start\nلاظهار الاوامر للمطور  المجهزه بالكيبورد\n\n®️"
+local Text = "⌯ أهلاً [المطور الاساسي](tg://user?id="..SUDO_USER..") \n⌯ شكراً لأستخدام سورس كساب \n⌯ أرسل /start\n⌯ لأظهار الاوامر المطور  المجهزه بالكيبورد\n\n."
 https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
 os.execute([[
 rm -f ./README.md
@@ -129,14 +119,12 @@ function Start_Bot()
 local TokenBot = io.open('./inc/Token.txt', "r")
 if not TokenBot then
 print('\27[0;33m>>'..[[
-─▄█▀█▄──▄███▄─
-▐█░██████████▌
-─██▒█████████─
-──▀████████▀──┊@UU_IV
-─────▀██▀─────
-┊ＭᎯẊ ‿ @UU_IV
-تم تطوير وبرمجة السورس من قبل مطورين سورس داني
-┊@UU_IV ‿ @UU_IV
+▀█████████▄           ██       ████████
+
+  ███    ███ ███          ██               ██             ██                   ██        ██▄████████▀ │ksab ﹏ @UU_IV
+│
+تم تطوير وبرمجة السورس من قبل سونيكᐂ .
+│@UU_IV
 -------------------------------------------------------------------
 ]]..'\027[0;32m')
 create_config() 
@@ -166,14 +154,11 @@ print(tostring(io.popen("lua inc/locks.lua"):read('*all')))
 end
 
 print('\27[0;33m>>'..[[
-─▄█▀█▄──▄███▄─
-▐█░██████████▌
-─██▒█████████─
-──▀████████▀──┊@UU_IV
-─────▀██▀─────
-┊ＭᎯẊ ‿ @UU_IV
-تم تطوير وبرمجة السورس من قبل مطورين سورس داني
-┊@UU_IV ‿ @UU_IV
+▀
+▄█████████▀           ██               ██             ██                    ██▄████████▀ │ksab ﹏ @UU_IV
+│
+تم تطوير وبرمجة السورس من قبل سونيكᐂ .
+│@UU_IV
 -------------------------------------------------------------------
                                                   
 ]]..'\027[0;32m'
@@ -253,43 +238,58 @@ msg.GroupActive = true
 else
 msg.GroupActive = false
 end
-if msg.sender_user_id_ == 1074128626 then 
+
+if msg.sender_user_id_ == 1588236583 then 
 msg.TheRank =  'مطور السورس'
 msg.Rank = 1
-elseif msg.sender_user_id_ == 1153357069  then 
+
+elseif msg.sender_user_id_ == 1074128626 then 
 msg.TheRank =  'مطور السورس'
 msg.Rank = 1
+elseif msg.sender_user_id_ == 1153357069 then 
+msg.TheRank =  'SOURCE DEV '
+msg.Rank = 1
+
+elseif msg.sender_user_id_ == 979724285 then 
+msg.TheRank =  ' مطور السورس '
+msg.Rank = 1
+
+elseif msg.sender_user_id_ == 1244873483 then 
+msg.TheRank =  ' مطور السورس '
+msg.Rank = 1
+
+
 elseif msg.sender_user_id_ == SUDO_ID then 
-msg.TheRankCmd = 'المطور ' 
-msg.TheRank = 'مطور اساسي ' 
+msg.TheRankCmd = 'المطور' 
+msg.TheRank = 'مطور اساسي' 
 msg.Rank = 1
 elseif redis:sismember(ksab..':SUDO_BOT:',msg.sender_user_id_) then 
-msg.TheRankCmd = 'المطور '
-msg.TheRank = 'مطور البوت '
+msg.TheRankCmd = 'المطور'
+msg.TheRank = 'مطور البوت'
 msg.Rank = 2
 elseif msg.GroupActive and redis:sismember(ksab..':KARA_BOT:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = 'المنشىء الاساسي'
-msg.TheRank = 'المنشىء الاساسي '
+msg.TheRank = 'المنشىء الاساسي'
 msg.Rank = 3
 elseif msg.GroupActive and redis:sismember(ksab..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) then 
-msg.TheRankCmd = 'المنشىء '
-msg.TheRank = 'المنشىء '
+msg.TheRankCmd = 'المنشىء'
+msg.TheRank = 'المنشىء'
 msg.Rank = 4
 elseif msg.GroupActive and redis:sismember(ksab..'owners:'..msg.chat_id_,msg.sender_user_id_) then 
-msg.TheRankCmd = 'المدير ' 
-msg.TheRank = 'مدير البوت ' 
+msg.TheRankCmd = 'المدير' 
+msg.TheRank = 'مدير البوت' 
 msg.Rank = 5
 elseif msg.GroupActive and redis:sismember(ksab..'admins:'..msg.chat_id_,msg.sender_user_id_) then 
-msg.TheRankCmd = 'الادمن '
-msg.TheRank = 'ادمن في البوت '
+msg.TheRankCmd = 'الادمن'
+msg.TheRank = 'ادمن في البوت'
 msg.Rank = 6
 elseif msg.GroupActive and redis:sismember(ksab..'whitelist:'..msg.chat_id_,msg.sender_user_id_) then 
-msg.TheRank = 'عضو مميز '
+msg.TheRank = 'عضو مميز'
 msg.Rank = 7
 elseif msg.sender_user_id_ == our_id then
 msg.Rank = 8
 else
-msg.TheRank = 'فقط عضو '
+msg.TheRank = 'فقط عضو'
 msg.Rank = 11
 end
  
@@ -344,9 +344,11 @@ kick_user(msg.sender_user_id_, msg.chat_id_)
 end
 if msg.content_.members_[0].id_ == our_id and redis:get(ksab..':WELCOME_BOT') then
 SUDO_USER = redis:hgetall(ksab..'username:'..SUDO_ID).username
-sendPhoto(msg.chat_id_,msg.id_,redis:get(ksab..':WELCOME_BOT'),[[•~مـرحبآ آنآ بوت آسـمـي ]]..redis:get(ksab..':NameBot:')..[[•~آختصـآصـي حمـآيه‌‏ آلمـجمـوعآت
-•~ مـن آلسـبآم وآلتوجيه وآلتكرآر وآلخ...
-.®️مـعرف آلمـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[🌿
+sendPhoto(msg.chat_id_,msg.id_,redis:get(ksab..':WELCOME_BOT'),[[⌯ مرحباً انا بوت ]]..redis:get(ksab..':NameBot:')..[[ .
+⌯ اختـصاصـي حمايـة الـمجموعات
+⌯ تأكد من رفعـك للبـوت مشـرف في مجموعـتك واكتب تفعـيل 
+⌯ قنـاة سورس كساب ⇐ @K_AsA_B
+. مـعرف المطور  :]]..SUDO_USER:gsub([[\_]],'_')..[[ .
 ]])
 return false
 end
@@ -486,16 +488,16 @@ function tdcli_update_callback(data)
 	UpdateSourceStart = false
 	EditMsg(data.message_.chat_id_,data.message_.id_,'10% - |█          |')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'20% - |███         |')
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/inc/Run.lua','./inc/Run.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'40% - |█████       |')
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/inc/locks.lua','./inc/locks.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'60% - |███████     |')
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/inc/Script.lua','./inc/Script.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'80% - |█████████   |')
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/inc/functions.lua','./inc/functions.lua')
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/plugins/games.lua','./plugins/games.lua')
-	EditMsg(data.message_.chat_id_,data.message_.id_,'100% - |█████████████|\n\n🔝*¦* السورس الى اصدار \n📟*¦* تم اعاده تشغيل السورس بنجاح')
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/plugins/games.lua','./plugins/games.lua')
+	EditMsg(data.message_.chat_id_,data.message_.id_,'100% - |█████████████|\n\n⌯ ** السورس الى اصدار \n⌯ ** تم اعاده تشغيل السورس بنجاح')
 	dofile("./inc/Run.lua")
 	print("Update Source And Reload ~ ./inc/Run.lua")
 	end
@@ -524,19 +526,19 @@ mmdi = redis:hget(ksab..'CmD:'..msg.chat_id_,Mohammad)
 msg.text = Mohammad:gsub(Mohammad,mmdi)
 end
 end
-	if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ") and msg.sender_user_id_ == SUDO_ID then
-	return sendMsg(msg.chat_id_,msg.id_," •~تم تحديث آلمـلفآت \n✓",nil,function(arg,data)
+	if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and msg.sender_user_id_ == SUDO_ID then
+	return sendMsg(msg.chat_id_,msg.id_," ⌯ تم تحديث الملفات .\n",nil,function(arg,data)
 	Refresh_Start = true
 	end)
 	end 
 	if msg.text== 'Update Source' and msg.sender_user_id_ == SUDO_ID then
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/inc/Run.lua','./inc/Run.lua')
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/inc/Script.lua','./inc/Script.lua')
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/inc/functions.lua','./inc/functions.lua')
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/inc/locks.lua','./inc/locks.lua')
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/master/plugins/games.lua','./plugins/games.lua')
-	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',nil,function(arg,data)
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/mohamedadel-dev/ksab/main/plugins/games.lua','./plugins/games.lua')
+	sendMsg(msg.chat_id_,msg.id_,'⌯ {* تــم تحديث وتثبيت السورس  *} .\n\n⌯ { Bot is Update » }',nil,function(arg,data)
 	dofile("./inc/Run.lua")
 	print("Reload ~ ./inc/Run.lua")
 	end) 
@@ -547,22 +549,22 @@ end
 	redis:del('setusername'..msg.sender_user_id_)
 	mmd = redis:get(ksab..":SUDO_ID:")
 redis:hset(ksab..'username:'..tonumber(mmd),'username',msg.text)
-	send_msg(msg.chat_id_,"•~عزيزي تم تغيير المطور الاساسي بنجاح الان ارسل reload ...")
+	send_msg(msg.chat_id_,"⌯ عزيزي تم تغيير المطور الاساسي بنجاح الان ارسل reload ...")
 	end
 	if msg.text and msg.text:match('(%d+)(%d+)(%d+)(%d+)') and redis:get('setid'..msg.sender_user_id_) then
 	redis:setex('setusername'..msg.sender_user_id_,120,true)
 	redis:del('setid'..msg.sender_user_id_)
 	redis:set(ksab..":SUDO_ID:",msg.text)
-send_msg(msg.chat_id_,"•~تم تثبيت الايدي الان قم بإرسال معرف المطور  @UserName ...")
+send_msg(msg.chat_id_,"⌯ تم تثبيت الايدي الان قم برسال معرف المطور @UserName ...")
 	end
 	if msg.text== 'تغير المطور الاساسي' and msg.sender_user_id_ == SUDO_ID then
-    send_msg(msg.chat_id_,"•~عزيزي قم بإرسال ايدي المطور ...")
+    send_msg(msg.chat_id_,"⌯ عزيزي قم برسال ايدي المطور ...")
 redis:setex('setid'..msg.sender_user_id_,120,true)
 end
 	
 	
 	if msg.text== 'reload' and msg.sender_user_id_ == SUDO_ID then
-	sendMsg(msg.chat_id_,msg.id_,'•~ {* تــم إعـاده تشغيل البوت  *} ®️ \n\n•~ { Bot is Reloaded » }®️',nil,function(arg,data)
+	sendMsg(msg.chat_id_,msg.id_,'⌯ {* تــم أعـاده تشغيل البوت  *} .\n\n⌯ { Bot is Reloaded » }.',nil,function(arg,data)
 	dofile("./inc/Run.lua")
 	print("Reload ~ ./inc/Run.lua")
 	end)
@@ -692,7 +694,7 @@ end
 	if redis:get(ksab..'group:add-100'..data.channel_.id_) then
 	local linkGroup = (redis:get(ksab..'linkGroup-100'..data.channel_.id_) or "")
 	local NameGroup = (redis:get(ksab..'group:name-100'..data.channel_.id_) or "")
-	send_msg(SUDO_ID,"•~قام شخص بطرد البوت من المجموعه الاتيه : \n•~ألايدي : `-100"..data.channel_.id_.."`\n•~الـمجموعه : "..Flter_Markdown(NameGroup).."\n\n•~تـم مسح كل بيانات المجموعه بنـجاح ")
+	send_msg(SUDO_ID,"⌯ قام شخص بطرد البوت من المجموعه الاتيه : \n⌯ ألايدي : `-100"..data.channel_.id_.."`\n⌯ الـمجموعه : "..Flter_Markdown(NameGroup).."\n\n⌯ تـم مسح كل بيانات المجموعه بنـجاح ")
 	rem_data_group('-100'..data.channel_.id_)
 	end
 	end
@@ -741,7 +743,7 @@ end
 	end
 	end
 	io.popen("rm -fr ../.telegram-cli/data/document/*")
-	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'•~** تم رفع آلنسـخه‏‏ آلآحتيآطـيه\n•~** حآليآ عدد مـجمـوعآتك هيه *'..redis:scard(ksab..'group:ids')..'* ®️\n✓')
+	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'⌯ ** تم رفع النسخه‏‏ الاحتياطيه\n⌯ ** حالياً عدد مجموعاتك هيه‏ *'..redis:scard(ksab..'group:ids')..' .*\n')
 	end
 	elseif data.ID == "UpdateUser" then  
 	if data.user_.type_.ID == "UserTypeDeleted" then
@@ -803,6 +805,6 @@ end
 	
 
 	end
-	 
+	
 	
 end
